@@ -17,13 +17,9 @@ export class HomepageTestSearchPage extends HTMLElement {
         this.id = "HomepageTestSearchPage_" + Math.floor(Math.random() * 100000000);
         this.model.controller = `getElementById('${this.id}')`;
 
-        const url = new URL(location);
-        this.model.queryText = url.searchParams.get("queryText") || "";
+        this.collectUrlParams();
 
         this.update();
-        this.addEventListener("click", (event) => {
-            console.log("click received", event.target);
-        })
     }
 
     update() {
@@ -67,8 +63,18 @@ export class HomepageTestSearchPage extends HTMLElement {
         this.update();
     }
 
+    collectUrlParams() {
+        const url = new URL(location);
+        for (const [key, value] of url.searchParams.entries()) {
+            this.model[key] = value;
+        }
+    }
+
     collectFormData() {
-        this.model.queryText = this.querySelector("#queryForm").elements["queryText"].value;
+        const formData = new FormData(this.querySelector("#queryForm"));
+        for(const [key, value] of formData.entries()) {
+            this.model[key] = value;
+        }
     }
 
 }
