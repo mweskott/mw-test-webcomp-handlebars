@@ -3,6 +3,7 @@
 export class HomepageTestSearchView extends HTMLElement {
     template = require("./mw-homepage-test-search-view.html");
     model = {
+        controller: "",
         queryText: "",
         suggestions: [],
         results: []
@@ -13,6 +14,8 @@ export class HomepageTestSearchView extends HTMLElement {
     }
 
     connectedCallback() {
+        this.id = "mw-homepage-test-search-view_" + Math.floor(Math.random() * 100000000);
+        this.model.controller = `getElementById('${this.id}')`;
         this.update();
         this.addEventListener("click", (event) => {
             console.log("click received", event.target);
