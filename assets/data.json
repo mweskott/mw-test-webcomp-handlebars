@@ -1,8 +1,0 @@
-{
-    "docs": [
-        { "key": "key-01", "value": "value-01" },
-        { "key": "key-02", "value": "value-02" },
-        { "key": "key-03", "value": "value-03" },
-        { "key": "key-04", "value": "value-04" }
-    ]
-}
