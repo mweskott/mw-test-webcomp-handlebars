@@ -1,7 +1,7 @@
 
 
-export class HomepageTestSearchView extends HTMLElement {
-    template = require("./mw-homepage-test-search-view.html");
+export class HomepageTestSearchPage extends HTMLElement {
+    template = require("./homepage-test-search-page.html");
     model = {
         controller: "",
         queryText: "",
@@ -14,7 +14,7 @@ export class HomepageTestSearchView extends HTMLElement {
     }
 
     connectedCallback() {
-        this.id = "mw-homepage-test-search-view_" + Math.floor(Math.random() * 100000000);
+        this.id = "HomepageTestSearchPage_" + Math.floor(Math.random() * 100000000);
         this.model.controller = `getElementById('${this.id}')`;
         this.update();
         this.addEventListener("click", (event) => {
@@ -55,9 +55,9 @@ export class HomepageTestSearchView extends HTMLElement {
     }
 
     collectFormData() {
-        this.model.queryText = this.querySelector("#mw-homepage-test-search-view_form").elements["queryText"].value;
+        this.model.queryText = this.querySelector("#queryForm").elements["queryText"].value;
     }
 
 }
 
-window.customElements.define('mw-homepage-test-search-view', HomepageTestSearchView);
+window.customElements.define('homepage-test-search-page', HomepageTestSearchPage);

@@ -4,7 +4,7 @@ module.exports = {
   entry: './src/main.js',
   mode: "production",
   output: {
-    filename: 'mw-homepage-test-search-view.js',
+    filename: 'homepage-test-search-page.js',
     path: path.resolve(__dirname, 'dist'),
   },
   module: {

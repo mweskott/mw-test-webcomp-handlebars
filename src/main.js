@@ -1,1 +1,1 @@
-import './mw-homepage-test-search-view';
+import './homepage-test-search-page';
